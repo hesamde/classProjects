@@ -8,6 +8,10 @@ function Navbar() {
   const { language, languageContent, toggleLanguage } = useContext(LanguageContext);
   const { navigationContent } = languageContent[language];
 
+  const changeTheme = () => {
+    theme === "light" ? toggleTheme("dark") : toggleTheme("light");
+    };
+
   return (
     <nav className={`Navbar ${theme}`}>
       <div>
@@ -21,7 +25,7 @@ function Navbar() {
         {languageContent.theme}
 
         <button
-            onClick={toggleTheme}>{theme === "light" ? "🌞" : "🌙"} {theme}
+            onClick={toggleTheme }>{theme === "light" ? "🌞" : "🌙"} {theme}
         </button>
 
         <button

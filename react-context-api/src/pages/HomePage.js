@@ -1,10 +1,20 @@
 import App from "../App";
+import { ThemeContext } from "../context/theme.context";
+import { useContext } from "react";
+// import  import { ThemeContext } from "../context/theme.context";
+// import { useContext } from "react";
+
 
 const profileImg = "https://i.imgur.com/i1gsj0v.png";
 
 function HomePage() {
+
+  const { theme } = useContext(ThemeContext);
+
+
   return (
-    <div className="HomePage">
+// changed the   <div className={`${theme}`}>
+    <div className={`${theme}`}>
       <h1>Hi! My Name is ...</h1>
       <img src={profileImg} className="profile" alt="profile" />
     </div>
@@ -12,3 +22,6 @@ function HomePage() {
 }
 
 export default HomePage;
+
+
+// changes in GREEN
